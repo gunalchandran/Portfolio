@@ -16,7 +16,7 @@ const About = () => {
   return (
     <motion.div
       ref={ref}
-      className="border-b border-neutral-900 pb-10"
+      className="border-b border-neutral-900 pb-20"
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
       {/* Section Title */}
