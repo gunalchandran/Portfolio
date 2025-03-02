@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { RiReactjsLine } from "react-icons/ri";
-import { SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql } from "react-icons/si";
+import { SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiFigma } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJsSquare } from "react-icons/fa";
-import { SiFigma } from "react-icons/si";
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-5xl text-orange-500" />, level: "90%", color: "bg-orange-500" },
@@ -21,32 +20,31 @@ const skills = [
 const Skills = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["0.1", "1.33"] });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
 
   return (
     <motion.div
       ref={ref}
-      className="border-b border-neutral-800 pb-20"
+      className="border-b border-neutral-800 pb-16 pt-20 px-4 sm:px-8 lg:py-[60vh]"
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
-      <h1 className="text-center text-white text-3xl md:text-4xl lg:text-6xl font-semibold my-16">
+      <h1 className="text-center text-white text-3xl md:text-4xl lg:text-6xl font-semibold mb-12">
         Skills
       </h1>
 
-      {/* Skills Container */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 lg:px-16">
+      {/* Skills Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 place-items-center">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
-            className="flex items-center gap-4 p-5 bg-gray-800 rounded-xl shadow-lg w-full sm:w-72 mx-auto"
+            className="flex items-center gap-4 p-5 w-full sm:w-72 bg-gray-800 rounded-xl shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <span className="sr-only">{skill.name} Icon</span>
-            {skill.icon}
+            <span className="shrink-0">{skill.icon}</span>
             <div className="w-full">
               <p className="text-lg font-semibold text-white">{skill.name}</p>
               <div className="w-full bg-gray-700 rounded-full h-2 mt-2">

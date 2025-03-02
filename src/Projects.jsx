@@ -29,7 +29,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="flex flex-col items-center justify-center px-4 sm:px-8 lg:px-16">
+    <div className="flex flex-col items-center justify-center px-4 sm:px-8 lg:px-16 lg:pt-[30vh]">
       <h1 className="my-16 text-center text-white text-3xl sm:text-4xl lg:text-6xl font-semibold">
         Projects
       </h1>
