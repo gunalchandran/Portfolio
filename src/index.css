@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-void-line;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-void text-paper font-body;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+  background: #F4C430;
+  color: #0B0906;
+}
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+  background: #0B0906;
+}
+::-webkit-scrollbar-thumb {
+  background: #33291A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F4C430;
+}
+  /* Visible keyboard focus states everywhere */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #F4C430;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+
+.glass {
+  background: rgba(31, 24, 16, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 196, 48, 0.14);
+}
+
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(244, 196, 48, 0.16), 0 0 24px rgba(244, 196, 48, 0.08);
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #F4C430 0%, #F5EFE2 55%, #FF6B35 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .section-eyebrow {
+    @apply font-mono text-xs tracking-[0.25em] uppercase text-signal;
+  }
+
+  .container-px {
+    @apply px-6 sm:px-8 lg:px-16 xl:px-24;
+  }
+}
+
+/* Respect reduced motion preference across the entire site */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
