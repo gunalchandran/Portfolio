@@ -11,7 +11,7 @@ export const profile = {
   email: 'gunalcsg0087@gamil.com',
   phone: '+91 730545 0388',
   resumeUrl: '/resume.pdf',
-  avatar: '/avatar.jpeg',
+  avatar: '/avatar.png',
   socials: {
     github: 'https://github.com/gunalchandran',
     linkedin: 'https://www.linkedin.com/in/gunalc/'
